@@ -29,7 +29,6 @@ const getAllBlogs = (req,res,next) => {
 }
 
 const createBlog = (req,res,next) => {
-    console.log(req.body);
     let newBlog = new Blog(req.body.blogAuthor,req.body.blogTitle,req.body.blogContent);
     blogs.push(newBlog);
     fs.writeFile(fileName,JSON.stringify(blogs,null,2), (err)=>{
