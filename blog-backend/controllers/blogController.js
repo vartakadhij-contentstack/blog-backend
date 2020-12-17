@@ -50,7 +50,7 @@ const getBlogById = (req,res,next)=>{
         return blog.blogId == req.params.blogId;
     });
     if(!result){
-        sendErrorMessage(new AppError(400,"Unsuccessful","Task not found"),req,res);
+        sendErrorMessage(new AppError(400,"Unsuccessful","Blog not found"),req,res);
     }
     sendResponse(200,"Successful",result,req,res);
 }
