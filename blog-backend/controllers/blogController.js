@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const Blog = require("../models/Blog");
-const uniqid = require("uniqid");
 const sendErrorMessage = require("../helpers/sendError");
 const AppError = require("../helpers/appErrorClass");
 const sendResponse = require("../helpers/sendResponse");
@@ -26,12 +25,7 @@ const verifyPostRequest = (req,res,next)=>{
 }
 
 const getAllBlogs = (req,res,next) => {
-    // res.status(200).json({
-    //     status:"Successful",
-    //     data: tasks
-    // })
     sendResponse(200,"Successful",[blogs],req,res);
-
 }
 
 const createBlog = (req,res,next) => {
